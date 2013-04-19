@@ -33,23 +33,16 @@ In order to keep New File from showing a dock icon (which, IMHO is dumb and poin
 
 ## Optional Setup
 **Changing the "file exists" behavior**
-By default, New File prompts for a new filename if a file by the requested name already exists in the folder. To change this behavior to increment the filename with an appended number, use the ````--prompt:```` flag.
+By default, New File prompts for a new filename if a file by the requested name already exists in the folder. To change this behavior to increment the filename with an appended number, edit line 7: ````property promptForNewFilenameOnOverwrite : true````.
 
 - When ````true````, the script will prompt for a new filename repeatedly until a unique filename is entered.
 - When ````false````, the script will increment the filename until it is unique and can be created.
 
 _Example:_
-````--prompt: false```` will set New File to increment filenames.
+````property promptForNewFilenameOnOverwrite : false```` will set New File to increment filenames.
 
 **Changing the default filename**
-The default filename for files created by only entering a file extention is "new". To change this, use the ````--filename:```` flag followed by the default filename in quotes.
+The default filename for files created by only entering a file extention is "new". To change this, edit line 6: ````property defaultFilename : "new"````.
 
 _Example:_
-````--filename: "blank"```` will set the default filename to _blank_. 
-
-### IAQ (Infrequently asked questions)
-### Why are you doing this?
-I wanted a quick and dead-simple way to add a new file. When saved as an application from AppleScript Editor, and with a few trivial extra steps, New File can be dragged to the Finder toolbar for easy access.
-
-### Okay, so why not just create a Service?
-**Short answer**: I do what I want.
+````property defaultFilename : "blank"```` will set the default filename to _blank_.
